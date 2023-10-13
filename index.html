@@ -1,0 +1,119 @@
+﻿﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+		<meta charset=utf-8"utf-8"/>
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width,height=device-height, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="format-detection" content="telephone=no" />
+		<title>自取方法-打不开重开即可</title>
+		<link type="text/css" rel="stylesheet" href="static/css/css.css" />
+        <style>
+            .svvv table{width: 100%;}
+            .svvv table img{width: 100%;}
+        </style>
+  <script>
+    // 利用节流函数来优化滚动事件的触发频率
+    function throttle(fn, interval) {
+      var lastTime = 0;
+      return function() {
+        var currTime = new Date().getTime();
+        if (currTime - lastTime > interval) {
+          fn.apply(this, arguments);
+          lastTime = currTime;
+        }
+      };
+    }
+    window.onload = function() {
+      var imgElements = document.getElementsByTagName('img');
+      // 获取页面高度
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight ||document.body.clientHeight;
+      // 监听滚动事件
+      var lazyLoadHandler = throttle(function() {
+        // 计算已经滚动过的距离
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        for (var i = 0; i < imgElements.length; i++) {
+          var imgElement = imgElements[i];
+          // 检查是否可见
+          if (!imgElement.getAttribute('data-loaded') && imgElement.offsetTop < windowHeight + scrollTop) {
+            // 加载图像
+            imgElement.setAttribute('src', imgElement.getAttribute('data-src'));
+            imgElement.setAttribute('data-loaded', true);
+          }
+        }
+      }, 300);
+      window.addEventListener('scroll', lazyLoadHandler, false);
+      lazyLoadHandler();
+    };
+  </script>  
+
+
+	</head>
+	<body>
+
+<div class="title">
+<img src="static/picture/a1.jpg" data-src="static/picture/a1.jpg"/><br>
+<img src="static/picture/a2-1.jpg" data-src="static/picture/a2-1.jpg"/><br>
+<img src="static/picture/b2.jpg" data-src="static/picture/b2.jpg"/><br>
+<img src="static/picture/a2-2.jpg" data-src="static/picture/a2-2.jpg"/><br>
+<img data-src="static/picture/a3.jpg"/><br>
+<img data-src="static/picture/dy-b1.jpg"/><br>
+<img data-src="static/picture/h1.jpg"/><br>
+<img src="static/picture/10.10-yk3.jpg" data-src="static/picture/10.10-yk3.jpg"/><br>
+<img data-src="static/picture/dy-h3.jpg"/><br>
+<img data-src="static/picture/dy-h5.jpg"/><br>
+<img data-src="static/picture/h6.jpg"/><br>
+<img data-src="static/picture/dy-i1.jpg"/><br>
+<img data-src="static/picture/dy-i2.jpg"/><br>
+<img data-src="static/picture/i3.jpg"/><br>
+</div>
+		
+		<div class="yuedu">阅读10万+</div>
+		<div class="qunicon">
+		  <div class="qunicon1">
+			<div class="icon1"><img src="static/picture/icon1.png" data-src="static/picture/icon1.png" /><span>分享</span></div>
+			<div class="icon1"><img src="static/picture/icon2.png" data-src="static/picture/icon2.png" /><span>收藏</span></div>
+		  </div>
+		  <div class="qunicon1">
+			<div class="icon1"><img src="static/picture/icon3.jpg" data-src="static/picture/icon3.jpg" /><span>5765</span></div>
+			<div class="icon1"><img src="static/picture/icon4.jpg" data-src="static/picture/icon4.jpg" /><span>1789</span></div>
+		  </div>
+		</div>
+		
+	</div>
+		<div class="qunliuyan">
+
+			<div class="liuyantit">
+				<p class="lyo">精选评论</p>
+			</div>
+						<div class="liuyanz">
+				<img class="qleft" src="static/picture/3.jpeg" data-src="static/picture/3.jpeg" />
+				<div class="qcenter"><p class="nichen">猫味萝莉</p><div class="liuyan">真牛皮，抖音极速版还有这个口子！</div></div>
+				<div class="qright"><img src="static/picture/icon3.png" data-src="static/picture/icon3.png" /><p>赞：128</p></div>
+			</div>
+						<div class="liuyanz">
+				<img class="qleft" src="static/picture/17.jpeg" data-src="static/picture/17.jpeg" />
+				<div class="qcenter"><p class="nichen">淡尘轻烟</p><div class="liuyan">几年前样幂的瓜都有，找了好久</div></div>
+				<div class="qright"><img src="static/picture/icon3.png" data-src="static/picture/icon3.png" /><p>赞：323</p></div>
+			</div>
+						<div class="liuyanz">
+				<img class="qleft" src="static/picture/28.jpeg" data-src="static/picture/28.jpeg" />
+				<div class="qcenter"><p class="nichen">野性_萌</p><div class="liuyan">竟然有抖音百万网红的瓜</div></div>
+				<div class="qright"><img src="static/picture/icon3.png" data-src="static/picture/icon3.png" /><p>赞：666</p></div>
+			</div>
+						<div class="liuyanz">
+				<img class="qleft" src="static/picture/9.jpeg" data-src="static/picture/9.jpeg" />
+				<div class="qcenter"><p class="nichen">少女の烦躁期</p><div class="liuyan">牛皮</div></div>
+				<div class="qright"><img src="static/picture/icon3.png" data-src="static/picture/icon3.png" /><p>赞：32</p></div>
+			</div>
+						<div class="liuyanz">
+				<img class="qleft" src="static/picture/15.jpeg" data-src="static/picture/15.jpeg" />
+				<div class="qcenter"><p class="nichen">岸与海的距离</p><div class="liuyan">真的太感谢了</div></div>
+				<div class="qright"><img src="static/picture/icon3.png" data-src="static/picture/icon3.png" /><p>赞：65</p></div>
+			</div>
+					</div>
+		
+<div class="title"></div>
+   
+<script charset="UTF-8" id="LA_COLLECT" src="static/js/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"JynFSvaWHMCARPXV",ck:"JynFSvaWHMCARPXV"})</script>
+	</body>
+</html>
